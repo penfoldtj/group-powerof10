@@ -525,7 +525,6 @@ elif run_btn and selected_url:
                 "Date": d.strftime("%d %b %Y"),
                 "Event": selected_event,
                 "Time": seconds_to_mmss(t),
-                "Seconds": round(float(t), 2),
                 "Year": d.year,
                 "Race # in Year": o,
             })
