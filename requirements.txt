@@ -1,3 +1,5 @@
 streamlit
 plotly
 power-of-10
+setuptools>=65
+wheel
