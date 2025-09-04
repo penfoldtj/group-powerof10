@@ -1,6 +1,5 @@
 streamlit>=1.32
 plotly>=5.20
-power-of-10
 requests
 pandas
 beautifulsoup4
