@@ -11,8 +11,8 @@ except Exception:
     get_athlete = None
 
 st.set_page_config(page_title="Power of 10: Season Summary", layout="wide")
-st.title("Power of 10 — Season Summary Web App (Interactive)")
-st.caption("Select an athlete (or Whole Group) and a season year. XC and parkrun events are excluded.")
+st.title("Run MC Performance Summary Web App")
+st.caption("Select an athlete (or Whole Group) and a season year.")
 
 # ---------------------- Helpers ----------------------
 def darken_color(base_rgb, race_number, min_brightness=0.4):
