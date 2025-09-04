@@ -517,6 +517,14 @@ elif run_btn and selected_url:
             orders.append(yearly_counts[d.year])
 
         fig = make_interactive_figure(selected_athlete_name, age_group, selected_event, dates, times, orders)
+        if times:  # only if we actually have data
+            unique_secs = sorted(set(int(t) for t in times))
+            fig.update_yaxes(
+                tickmode="array",
+                tickvals=unique_secs,
+                ticktext=[seconds_to_mmss(v) for v in unique_secs],
+                title_text="Time (mm:ss)"
+            )
         st.plotly_chart(fig, use_container_width=True, config={"displayModeBar": True})
 
         table_rows = []
