@@ -495,10 +495,16 @@ elif run_btn and selected_url:
             pb_by_year[d.year] += 1
     total_pbs = pb_by_year.get(yr, 0)
 
+    year_times = [t for d, t in event_perfs if d.year == yr]
+    best_time_val = min(year_times) if year_times else float("inf")
+    mean_time_val = (sum(year_times) / len(year_times)) if year_times else float("inf")
+
     # Metrics above the graph
-    c1, c2 = st.columns(2)
+    c1, c2, c3, c4 = st.columns(4)
     c1.metric("Total Performances (year)", total_perfs)
     c2.metric("Total PBs (year)", total_pbs)
+    c3.metric("Best (year)", seconds_to_mmss(best_time_val) if year_times else "N/A")
+    c4.metric("Mean (year)", seconds_to_mmss(mean_time_val) if year_times else "N/A")
 
     # Plot + table
     if event_perfs:
