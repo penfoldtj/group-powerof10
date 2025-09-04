@@ -384,16 +384,64 @@ if run_btn and selected_athlete_name == "Whole Group":
         st.plotly_chart(fig_impr, use_container_width=True)
 
         # Fastest time lines per event & gender
+
         for ev in ("400","800","1500"):
             fig_fast = go.Figure()
             male_series = [fastest_year[Y][("Male", ev)] for Y in years_sorted]
             female_series = [fastest_year[Y][("Female", ev)] for Y in years_sorted]
             male_series = [v if v != float('inf') else None for v in male_series]
             female_series = [v if v != float('inf') else None for v in female_series]
-            fig_fast.add_trace(go.Scatter(x=years_sorted, y=male_series, mode='lines+markers', name='Male'))
-            fig_fast.add_trace(go.Scatter(x=years_sorted, y=female_series, mode='lines+markers', name='Female'))
-            fig_fast.update_layout(title=f"Fastest {ev}m by Year (lower is better)", xaxis_title="Year", yaxis_title="Time (s)")
+
+            male_custom  = [seconds_to_mmss(v) if v is not None else None for v in male_series]
+            female_custom= [seconds_to_mmss(v) if v is not None else None for v in female_series]
+
+            fig_fast.add_trace(go.Scatter(
+                x=years_sorted, y=male_series, mode='lines+markers', name='Male',
+                customdata=male_custom,
+                hovertemplate="<b>%{x}</b><br>Male: %{customdata}<extra></extra>"
+            ))
+            fig_fast.add_trace(go.Scatter(
+                x=years_sorted, y=female_series, mode='lines+markers', name='Female',
+                customdata=female_custom,
+                hovertemplate="<b>%{x}</b><br>Female: %{customdata}<extra></extra>"
+            ))
+
+            all_secs = [v for v in (male_series + female_series) if v is not None]
+            if all_secs:
+                y_min, y_max = min(all_secs), max(all_secs)
+                span = y_max - y_min
+                if span <= 10:        step = 1
+                elif span <= 20:      step = 2
+                elif span <= 60:      step = 5
+                elif span <= 120:     step = 10
+                else:                 step = 15
+                start = int((y_min // step) * step)
+                ticks = list(range(start, int(y_max) + step, step))
+                fig_fast.update_yaxes(
+                    tickmode="array",
+                    tickvals=ticks,
+                    ticktext=[seconds_to_mmss(v) for v in ticks],
+                    title_text="Time (mm:ss)"
+                )
+            else:
+                fig_fast.update_yaxes(title_text="Time (mm:ss)")
+
+            fig_fast.update_layout(
+                title=f"Fastest {ev}m by Year (lower is better)",
+                xaxis_title="Year"
+            )
             st.plotly_chart(fig_fast, use_container_width=True)
+    
+  #      for ev in ("400","800","1500"):
+  #          fig_fast = go.Figure()
+  #          male_series = [fastest_year[Y][("Male", ev)] for Y in years_sorted]
+  #          female_series = [fastest_year[Y][("Female", ev)] for Y in years_sorted]
+  #          male_series = [v if v != float('inf') else None for v in male_series]
+  #          female_series = [v if v != float('inf') else None for v in female_series]
+  #          fig_fast.add_trace(go.Scatter(x=years_sorted, y=female_series, mode='lines+markers', name='Female'))
+  #          fig_fast.add_trace(go.Scatter(x=years_sorted, y=male_series, mode='lines+markers', name='Male'))
+  #          fig_fast.update_layout(title=f"Fastest {ev}m by Year (lower is better)", xaxis_title="Year", yaxis_title="Time (s)")
+  #          st.plotly_chart(fig_fast, use_container_width=True)
     else:
         st.warning("No data found to plot across years.")
 
