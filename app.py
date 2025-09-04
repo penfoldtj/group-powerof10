@@ -51,10 +51,53 @@ def format_time(t: float) -> str:
 default_roster = [
     ("Arran Head", "https://www.thepowerof10.info/athletes/profile.aspx?athleteid=813368", ["200", "400"]),
     ("Charlie Furness", "https://www.thepowerof10.info/athletes/profile.aspx?athleteid=1039293", ["400", "800"]),
-    ("Leyton O'Brien", "https://www.thepowerof10.info/athletes/profile.aspx?athleteid=1156664", ["400", "800"], {2024, 2025}),  # example restriction
-    ("Zak Old", "https://www.thepowerof10.info/athletes/profile.aspx?athleteid=740808", ["400", "800"]),
-    ("Max Cary", "https://www.thepowerof10.info/athletes/profile.aspx?athleteid=1235525", ["300", "800"]),
-    # ... add the rest of your athletes here (tuples of 3 or 4 items are both OK)
+    ("Leyton O'Brien", "https://www.thepowerof10.info/athletes/profile.aspx?athleteid=1156664", ["400", "800"]),  
+    ("Zak Old", "https://www.thepowerof10.info/athletes/profile.aspx?athleteid=740808", ["400", "800"], {2023, 2024, 2025}),
+    ("Max Cary", "https://www.thepowerof10.info/athletes/profile.aspx?athleteid=1235525", ["300", "800"], {2025}),
+    ("Jonathon Gaukrodger", "https://www.thepowerof10.info/athletes/profile.aspx?athleteid=1014884", ["800"]),
+    ("Finn Johnson", "https://www.thepowerof10.info/athletes/profile.aspx?athleteid=1117927", ["800"], {2023, 2024, 2025}),
+    ("Daniel Watson", "https://www.thepowerof10.info/athletes/profile.aspx?athleteid=1059027", ["800", "1500"]),
+    ("Zac Brannon", "https://www.thepowerof10.info/athletes/profile.aspx?athleteid=911754", ["800", "1500"]),
+    ("Joseph Lodge", "https://www.thepowerof10.info/athletes/profile.aspx?athleteid=1123625", ["800", "1500"]),
+    ("James Sturman", "https://www.thepowerof10.info/athletes/profile.aspx?athleteid=925272", ["800", "1500"]),
+    ("Elliot Moore", "https://www.thepowerof10.info/athletes/profile.aspx?athleteid=1133477", ["800", "1500"], {2025}),
+    ("Phoenix Hayton-Rowell", "https://www.thepowerof10.info/athletes/profile.aspx?athleteid=1255066", ["800", "1500"]),
+    ("Jude Wilson", "https://www.thepowerof10.info/athletes/profile.aspx?athleteid=1243377", ["800", "1500"]),
+    ("Hamish Dochin", "https://www.thepowerof10.info/athletes/profile.aspx?athleteid=1014024", ["800", "1500"]),
+    ("Eilidh Dochin", "https://www.thepowerof10.info/athletes/profile.aspx?athleteid=1122365", ["800", "1500"]),
+    ("Oliver Calvert", "https://www.thepowerof10.info/athletes/profile.aspx?athleteid=1054377", ["800", "1500"], {2025}),
+    ("Peter Davies", "https://www.thepowerof10.info/athletes/profile.aspx?athleteid=1172710", ["1500", "3000"]),
+    ("Edward Watson", "https://www.thepowerof10.info/athletes/profile.aspx?athleteid=1212835", ["800", "1500"]),
+    ("Noah Penfold", "https://www.thepowerof10.info/athletes/profile.aspx?athleteid=1066535", ["800", "1500"]),
+    ("Jude Cook", "https://www.thepowerof10.info/athletes/profile.aspx?athleteid=1172789", ["800", "1500"]),
+    ("Edward Taggart", "https://www.thepowerof10.info/athletes/profile.aspx?athleteid=1234654", ["800", "1500"]),
+    ("Billy Scambler", "https://www.thepowerof10.info/athletes/profile.aspx?athleteid=1148224", ["800", "1500"]),
+    ("Gabriel Kennedy", "https://www.thepowerof10.info/athletes/profile.aspx?athleteid=1173569", ["800", "1500"]),
+    ("Edward Duff", "https://www.thepowerof10.info/athletes/profile.aspx?athleteid=1310912", ["600", "800"]),
+    ("Matt Hale", "https://www.thepowerof10.info/athletes/profile.aspx?athleteid=1099294", ["600", "800"]),
+    ("Matthias Gheorghiu", "https://www.thepowerof10.info/athletes/profile.aspx?athleteid=1288448", ["600", "800"]),
+    ("Tom Hale", "https://www.thepowerof10.info/athletes/profile.aspx?athleteid=1099295", ["800", "1500"]),
+    ("Poppy Old", "https://www.thepowerof10.info/athletes/profile.aspx?athleteid=872886", ["400", "800"], {2023, 2024, 2025}),
+    ("Annie Murphy", "https://www.thepowerof10.info/athletes/profile.aspx?athleteid=1085421", ["300", "800"]),
+    ("Olivia Murphy", "https://www.thepowerof10.info/athletes/profile.aspx?athleteid=1103056", ["800", "1500"], {2025}),
+    ("Fenella Murphy", "https://www.thepowerof10.info/athletes/profile.aspx?athleteid=1233681", ["300", "800"]),
+    ("Freya Beckingsale", "https://www.thepowerof10.info/athletes/profile.aspx?athleteid=1178378", ["300", "800"]),
+    ("Freya Johnson", "https://www.thepowerof10.info/athletes/profile.aspx?athleteid=1016500", ["800", "1500"]),
+    ("Lily McColl", "https://www.thepowerof10.info/athletes/profile.aspx?athleteid=1065971", ["800", "1500"]),
+    ("Rosie Bain", "https://www.thepowerof10.info/athletes/profile.aspx?athleteid=1170205", ["800", "1500"]),
+    ("Katie Joslyn", "https://www.thepowerof10.info/athletes/profile.aspx?athleteid=817044", ["800", "1500"], {2023, 2024, 2025}),
+    ("Ada Penfold", "https://www.thepowerof10.info/athletes/profile.aspx?athleteid=1066534", ["800", "1500"]),
+    ("Emily McColl", "https://www.thepowerof10.info/athletes/profile.aspx?athleteid=1122227", ["800", "1500"]),
+    ("Alice Scambler", "https://www.thepowerof10.info/athletes/profile.aspx?athleteid=1165600", ["800", "1500"]),
+    ("Ellie Nelson", "https://www.thepowerof10.info/athletes/profile.aspx?athleteid=1294379", ["800"]),
+    ("Elodie Soward", "https://www.thepowerof10.info/athletes/profile.aspx?athleteid=1295652", ["1500"]),
+    ("Elsa Hawkins", "https://www.thepowerof10.info/athletes/profile.aspx?athleteid=1304885", ["800"]),
+    ("Holly Waugh", "https://www.thepowerof10.info/athletes/profile.aspx?athleteid=836023", ["1500", "3000"], {2023, 2024, 2025}),
+    ("Anna Johnson", "https://www.thepowerof10.info/athletes/profile.aspx?athleteid=1040378", ["1500", "3000"], {2023, 2024, 2025}),
+    ("Megan Scope", "https://www.thepowerof10.info/athletes/profile.aspx?athleteid=1097007", ["1500", "3000"]),
+    ("Fell Tocher", "https://www.thepowerof10.info/athletes/profile.aspx?athleteid=1250734", ["800", "1500"]),
+    ("Jacqueline Penn", "https://www.thepowerof10.info/athletes/profile.aspx?athleteid=562552", ["3000", "5000"]),
+    ("Josh Blevins", "https://www.thepowerof10.info/athletes/profile.aspx?athleteid=627740", ["800", "1500"], {2025}),
 ]
 
 # Normalize roster to a uniform dict shape and never unpack tuples elsewhere
@@ -484,4 +527,5 @@ elif run_btn and selected_url:
         st.dataframe(table_rows, use_container_width=True)
     else:
         st.info("No performances found for this event.")
+
 
