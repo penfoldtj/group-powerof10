@@ -96,7 +96,7 @@ default_roster = [
     ("Anna Johnson", "https://www.thepowerof10.info/athletes/profile.aspx?athleteid=1040378", ["1500", "3000"], {2023, 2024, 2025}),
     ("Megan Scope", "https://www.thepowerof10.info/athletes/profile.aspx?athleteid=1097007", ["1500", "3000"]),
     ("Fell Tocher", "https://www.thepowerof10.info/athletes/profile.aspx?athleteid=1250734", ["800", "1500"]),
-    ("Jacqueline Penn", "https://www.thepowerof10.info/athletes/profile.aspx?athleteid=562552", ["3000", "5000"]),
+#    ("Jacqueline Penn", "https://www.thepowerof10.info/athletes/profile.aspx?athleteid=562552", ["3000", "5000"]),
     ("Josh Blevins", "https://www.thepowerof10.info/athletes/profile.aspx?athleteid=627740", ["800", "1500"], {2025}),
 ]
 
