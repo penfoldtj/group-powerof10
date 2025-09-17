@@ -49,6 +49,7 @@ def format_time(t: float) -> str:
 # To restrict an athlete to certain years (Whole Group only), add a 4th item: a list/set of years.
 #   ("Name", "url", ["events"], {2024, 2025})
 default_roster = [
+    ("Jake Wightman", "https://www.thepowerof10.info/athletes/profile.aspx?athleteid=63342", ["800", "1500"]),
     ("Arran Head", "https://www.thepowerof10.info/athletes/profile.aspx?athleteid=813368", ["200", "400"]),
     ("Charlie Furness", "https://www.thepowerof10.info/athletes/profile.aspx?athleteid=1039293", ["400", "800"]),
     ("Leyton O'Brien", "https://www.thepowerof10.info/athletes/profile.aspx?athleteid=1156664", ["400", "800"]),  
